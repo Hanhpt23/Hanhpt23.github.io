@@ -1,3 +1,3 @@
 # Insect Detection Using Deep Learning Network
 
-### Insect pest are one of the main factors affecting agricultural product. Accurate recognition and classification of insect pests can prevent huge economic losses. This dataset will play a great role in this regard.
+### In agriculture, insect pests are always one of the main factors affecting product quality. Accurate detecting insect pests can help famers to prevent it's effectives and improve their product quality. In this project, we propose a novel method that enables the automatic detection of insect pests.
