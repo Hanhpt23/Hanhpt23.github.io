@@ -1,3 +1,2 @@
-# Hanhpt23.github.io
+# Insect Detection Using Deep Learning Network
 
-## Hello everyone! I am Hanh.
