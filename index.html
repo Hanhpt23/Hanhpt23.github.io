@@ -377,6 +377,68 @@
         </table>
         
 
+
+
+        <table class="project-table" width="95%" align="center" border="0" cellspacing="0" cellpadding="20">
+            <!-- Robotic Joint Failures Using POMDP -->
+            <tr onmouseout="loss_stop()" onmouseover="loss_start()">
+                <td style="vertical-align: top;">
+                    <a href="https://hanhpt23.github.io/franka-IK/">
+                        <papertitle>Adaptive Compensation for Robotic Joint Failures Using Partially Observable Reinforcement Learning</papertitle>
+                    </a>
+                    <p style="text-align: justify;">In this study, we address the challenge of enabling a robotic manipulator to complete tasks despite joint malfunctions. 
+                        Specifically, we develop a reinforcement learning (RL) framework to adaptively compensate for a non-functional joint during task execution. 
+                        Our experimental platform is the Franka robot with 7 degrees of freedom (DOFs). 
+                        We formulate the problem as a partially observable RL scenario, where the robot is trained under various joint failure conditions and tested in both seen and unseen scenarios. 
+                        We consider scenarios where a joint is permanently broken and where it functions intermittently. 
+                        Additionally, we demonstrate the effectiveness of our approach by comparing it with traditional inverse kinematics-based control methods. 
+                        The results show that the RL algorithm enables the robot to successfully complete tasks even with joint failures, achieving a high success rate with an average rate of 93.6%. 
+                        This showcases its robustness and adaptability. Our findings highlight the potential of RL to enhance the resilience and reliability of robotic systems, making them better suited for unpredictable environments. 
+                        All related codes and models are published online.
+                    </p>
+                </td>
+
+
+                <td style="text-align: center; vertical-align: top;">
+                    <!-- Top Row of Images -->
+                    <div style="margin-top: 20px; display: flex; justify-content: center;">
+                        <div style="margin-right: 5px;">
+                            <img src="https://raw.githubusercontent.com/Hanhpt23/franka-IK/main/success.png" class="project-image" style="position: relative; z-index: 1;" alt="The robot successfully opens the cabinet.">
+                            <div style="font-size: 12px;">(a) The robot successfully opens the cabinet.</div>
+                        </div>
+                        <div>
+                            <img src="https://raw.githubusercontent.com/Hanhpt23/franka-IK/main/fail.png" class="project-image" style="position: relative; z-index: 1;" alt="">
+                            <div style="font-size: 12px;">(b) The robot fails to open the cabinet.</div>
+                        </div>
+                    </div>
+                
+                    <!-- Bottom Row of Images -->
+                    <div style="margin-top: 40px; display: flex; justify-content: center;">
+                        <div style="margin-right: 5px;">
+                            <img src="https://raw.githubusercontent.com/Hanhpt23/franka-IK/main/woking.png" class="project-image" style="position: relative; z-index: 1;" alt="">
+                            <div style="font-size: 12px;">(c) The robot works properly.</div>
+                        </div>
+                        <div>
+                            <img src="https://raw.githubusercontent.com/Hanhpt23/franka-IK/main/failure3.png" class="project-image" style="position: relative; z-index: 1;" alt="">
+                            <div style="font-size: 12px;">(d) The robot fails to follow the expected trajectory when one of the joints is broken.</div>
+                        </div>
+                    </div>
+                </td>
+                
+            </tr>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
         <table class="project-table" width="95%" align="center" border="0" cellspacing="0" cellpadding="20">
             <!-- seUnet-Trans -->
             <tr onmouseout="loss_stop()" onmouseover="loss_start()">
