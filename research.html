@@ -1,0 +1,665 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1000">
+    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+    <style type="text/css">
+        html, body {
+            overflow-y: scroll; /* Always show scrollbar to maintain consistent width */
+        }
+
+        a {
+            color: #1478dd;
+            text-decoration: none;
+        }
+        
+        a:focus,
+        a:hover {
+            color: #f09228;
+            text-decoration: none;
+        }
+
+        body {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 14px;
+            background: #f5f5f5;
+            color: #252020;
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        body.dark-theme {
+            background: #1a1a1a;
+            color: #d0d0d0;
+        }
+        
+        body.dark-theme a {
+            color: #6f9ecf;
+        }
+        
+        body.dark-theme a:focus,
+        body.dark-theme a:hover {
+            color: #e6b800;
+        }
+        
+        body.dark-theme .navbar a {
+            color: #d0d0d0;
+        }
+        
+        body.dark-theme .navbar a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        body.dark-theme .name-style {
+            color: #6f9ecf;
+        }
+        
+        body.dark-theme .section-heading {
+            color: #d0d0d0;
+            border-left-color: #e6b800;
+        }
+        
+        body.dark-theme .footer {
+            color: #bbbbbb;
+        }
+        
+        body.dark-theme p, 
+        body.dark-theme td, 
+        body.dark-theme th, 
+        body.dark-theme strong {
+            color: #a7a0a0;
+        }
+        
+        body.dark-theme papertitle {
+            color: #6d8bac !important;
+        }
+        
+        body.dark-theme .about-text span[style*="background-color: #b9e778"] {
+            background-color: #3a5a3a !important;
+            color: #d0d0d0 !important;
+        }
+
+        p, td {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 16px;
+            text-align: justify;
+        }
+        
+        th, a {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        
+        strong {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        
+        heading {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 22px;
+        }
+        
+        papertitle {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        
+        name {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 32px;
+            display: block;
+            text-align: center;
+        }
+
+        .name-style {
+            font-family: 'Lato', sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: #062a4b;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .one {
+            width: 160px;
+            height: 160px;
+            position: relative;
+        }
+        
+        .two {
+            width: 160px;
+            height: 160px;
+            position: absolute;
+            transition: opacity .2s ease-in-out;
+            -moz-transition: opacity .2s ease-in-out;
+            -webkit-transition: opacity .2s ease-in-out;
+        }
+        
+        .fade {
+            transition: opacity .2s ease-in-out;
+            -moz-transition: opacity .2s ease-in-out;
+            -webkit-transition: opacity .2s ease-in-out;
+        }
+        
+        span.highlight {
+            background-color: #ffffd0;
+        }
+
+        .project-table {
+            width: 100%;
+            border-collapse: collapse;
+            /* border-bottom: 1px solid black; */
+        }
+
+        .project-table td {
+            padding: 20px;
+            width: 50%;
+            vertical-align: top;
+            border: none;
+        }
+
+        .project-image {
+            width: 100%;
+            height: auto;
+        }
+
+        hr.styled {
+            border: 0;
+            height: 2px;
+            background: linear-gradient(to right, #1478dd, #f09228);
+            margin: 20px auto;
+            width: 95%;
+        }
+
+        .navbar {
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .navbar a {
+            display: inline-block;
+            color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .theme-toggle button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            padding: 10px;
+        }
+
+        body.dark-theme .theme-toggle button {
+            color: #d0d0d0;
+        }
+
+        .theme-toggle button:hover {
+            color: #f09228;
+        }
+
+        body.dark-theme .theme-toggle button:hover {
+            color: #e6b800;
+        }
+        
+        .navbar, .nav-links, .theme-toggle {
+            box-sizing: border-box;
+        }
+        
+        .section {
+            padding-top: 60px;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 2.0;
+            text-align: justify;
+        }
+
+        .section-heading {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #010b15;
+            border-left: 4px solid #f09228;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+            font-size: 12px;
+            text-align: right;
+        }
+
+        h3 {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 18px;
+            color: #b22013;
+            margin-top: 20px;
+        }
+    </style>
+    <link rel="icon" type="image/jpg" href="images/icon.jpg">
+    <title>Tan-Hanh Pham</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+
+
+<body>
+    <table width="1000" border="0" align="center" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+                <!-- navigation bar -->
+                <div class="navbar">
+                    <div class="theme-toggle">
+                        <button id="sun-theme" title="Switch to Light Theme"><i class="fas fa-sun"></i></button>
+                        <button id="moon-theme" title="Switch to Dark Theme"><i class="fas fa-moon"></i></button>
+                    </div>
+                    <div class="nav-links">
+                        <a href="index.html"><strong>Home</strong></a>
+                        <a href="publications.html"><strong>Publications</strong></a>
+                        <a href="research.html"><strong>Research</strong></a>
+                        <a href="professional_activities.html"><strong>Professional Activities</strong></a>
+                        <!-- <a href="awards.html"><strong>Awards and Honors</strong></a> -->
+                        <a href="blogs.html"><strong>Blogs</strong></a>
+                        <a href="contact.html"><strong>Contact</strong></a>
+                    </div>
+                </div>
+
+                <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+                    <tr class="section">
+                        <td width="100%" valign="middle">
+                            <h2 class="section-heading">Research Interests</h2>
+                            <div class="about-text">
+                                <p>
+                                    Over the past few years, I have explored a diverse range of topics in robotics and artificial intelligence. My research began with designing robotic systems and intelligent control algorithms, later expanding into deep learning applications. Initially, I focused on enabling autonomous systems to interact safely and adaptively with their environments using reinforcement learning and control strategies. This work evolved into leveraging AI to tackle real-world challenges, particularly in robotics for daily life and AI-driven decision-making systems.
+                                </p>
+                                <p>
+                                    Recently, my research has shifted toward medical AI, including reasoning-based disease diagnosis, 3D/4D medical image analysis, and video understanding via vision-language models. I am especially interested in how these models can interpret complex spatiotemporal data to provide explainable insights from medical images and videos. My overarching goal is to develop intelligent systems that enhance human well-being by integrating perception, reasoning, and action.
+                                </p>
+                            </div>
+                            
+                            <hr style="width: 610px; margin: 20px auto; border: 1px solid #6b1842;">
+
+                            <h2 class="section-heading">Research Projects</h2>
+                            <div class="about-text">
+
+
+                                <!-- MRSI Missing Voxel Estimation -->
+                                <table class="project-table" width="100%" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span><a href="https://arxiv.org/pdf/2505.06811?">Missing Data Estimation for MR Spectroscopic Imaging via Mask-Free Deep Learning Methods</a>
+                                        
+                                        </th>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                Magnetic Resonance Spectroscopic Imaging (MRSI) is a powerful tool for non-invasive mapping of brain metabolites, providing critical insights into neurological conditions. However, its utility is often limited by missing or corrupted data due to motion artifacts, magnetic field inhomogeneities, or failed spectral fitting-especially in high resolution 3D acquisitions. To address this, we propose the first deep learning-based, mask-free framework for estimating missing data in MRSI metabolic maps. Unlike conventional restoration methods that rely on explicit masks to identify missing regions, our approach implicitly detects and estimates these areas using contextual spatial features through 2D and 3D U-Net architectures. We also introduce a progressive training strategy to enhance robustness under varying levels of data degradation. Our method is evaluated on both simulated and real patient datasets and consistently outperforms traditional interpolation techniques such as cubic and linear interpolation. The 2D model achieves an MSE of 0.002 and an SSIM of 0.97 with 20% missing voxels, while the 3D model reaches an MSE of 0.001 and an SSIM of 0.98 with 15% missing voxels. Qualitative results show improved fidelity in estimating missing data, particularly in metabolically heterogeneous regions and ventricular regions. Importantly, our model generalizes well to real-world datasets without requiring retraining or mask input. These findings demonstrate the effectiveness and broad applicability of mask-free deep learning for MRSI restoration, with strong potential for clinical and research integration.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/mrsi.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">MRSI missing voxel estimation.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="width:810px; margin: 5px 0; border: 1px solid #6b6118;">
+                                
+
+                                <!-- RARL: RL for Medical VLMs -->
+                                <table class="project-table" width="100%" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span><a href="https://arxiv.org/pdf/2505.06811?">RARL: Improving Medical VLM Reasoning and Generalization with Reinforcement Learning and LoRA under Data and Hardware Constraints</a>
+                                        
+                                        </th>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                We propose a Reasoning-Aware Reinforcement Learning framework, <strong>RARL</strong>, that enhances the reasoning capabilities of medical VLMs while remaining efficient and adaptable to low-resource environments. Our approach fine-tunes a lightweight base model, Qwen2-VL-2B-Instruct, using Low-Rank Adaptation and custom reward functions that jointly consider diagnostic accuracy and reasoning quality. Training is performed on a single NVIDIA A100-PCIE-40GB GPU, demonstrating the feasibility of deploying such models in constrained environments. We evaluate the model using an LLM-as-judge framework that scores both correctness and explanation quality. Experimental results show that RARL significantly improves VLM performance in medical image analysis and clinical reasoning, outperforming supervised fine-tuning on reasoning-focused tasks by approximately 7.78%, while requiring fewer computational resources. Additionally, we demonstrate the generalization capabilities of our approach on unseen datasets, achieving around 27% improved performance compared to supervised fine-tuning and about 4% over traditional RL fine-tuning. Our experiments also illustrate that diversity prompting during training and reasoning prompting during inference are crucial for enhancing VLM performance. Our findings highlight the potential of reasoning-guided learning and reasoning prompting to steer medical VLMs toward more transparent, accurate, and resource-efficient clinical decision-making.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/rarl1.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;"> Overview of RARL.</div>
+                                            </div>
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/rarl2.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Model prediction and reasoning.</div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="width:810px; margin: 5px 0; border: 1px solid #6b6118;">
+
+                                <!-- IQBench for VLMs -->
+                                <table class="project-table" width="100%" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span><a href="https://arxiv.org/pdf/2505.12000">IQBench: How" Smart''Are Vision-Language Models? A Study with Human IQ Tests</a>
+                                        
+                                        </th>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                Although large Vision-Language Models (VLMs) have demonstrated remarkable performance in a wide range of multimodal tasks, their true reasoning capabilities on human IQ tests remain underexplored. To advance research on the fluid intelligence of VLMs, we introduce <strong>IQBench</strong>, a new benchmark designed to evaluate VLMs on standardized visual IQ tests. We focus on evaluating the reasoning capabilities of VLMs, which we argue are more important than the accuracy of the final prediction. Our benchmark is visually centric, minimizing the dependence on unnecessary textual content, thus encouraging models to derive answers primarily from image-based information rather than learned textual knowledge. To this end, we manually collected and annotated 500 visual IQ questions to prevent unintentional data leakage during training. Unlike prior work that focuses primarily on the accuracy of the final answer, we evaluate the reasoning ability of the models by assessing their explanations and the patterns used to solve each problem, along with the accuracy of the final prediction and human evaluation. Our experiments show that there are substantial performance disparities between tasks, with models such as `o4-mini`, `gemini-2.5-flash`, and `claude-3.7-sonnet` achieving the highest average accuracies of 0.615, 0.578, and 0.548, respectively. However, all models struggle with 3D spatial and anagram reasoning tasks, highlighting significant limitations in current VLMs' general reasoning abilities. In terms of reasoning scores, `o4-mini`, `gemini-2.5-flash`, and `claude-3.7-sonnet` achieved top averages of 0.696, 0.586, and 0.516, respectively. These results highlight inconsistencies between the reasoning processes of the models and their final answers, emphasizing the importance of evaluating the accuracy of the reasoning in addition to the final predictions.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/IQbench.jpeg" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">IQ Test for VLMs.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="width:810px; margin: 5px 0; border: 1px solid #6b6118;">
+
+
+                                <!-- Silvar-Med -->
+                                <table class="project-table" width="100%" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span><a href="https://openaccess.thecvf.com/content/CVPR2025W/MAR/papers/Pham_SilVar-Med_A_Speech-Driven_Visual_Language_Model_for_Explainable_Abnormality_Detection_CVPRW_2025_paper.pdf">SilVar-Med: A Speech-Driven Visual Language Model for Explainable Abnormality Detection in Medical Imaging</a></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                We introduce an end-to-end speech-driven medical VLM, SilVar-Med, a multimodal medical image assistant that integrates speech interaction with VLMs, pioneering the task of voice-based communication for medical image analysis. In addition, we focus on the interpretation of the reasoning behind each prediction of medical abnormalities with a proposed reasoning dataset. Through extensive experiments, we demonstrate a proof-of-concept study for reasoning-driven medical image interpretation with end-to-end speech interaction. We believe this work will advance the field of medical AI by fostering more transparent, interactive, and clinically viable diagnostic support systems.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/silvar-med.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Speech-Driven Visual Language Model for Explainable Abnormality Detection in Medical Imaging.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="width:810px; margin: 5px 0; border: 1px solid #6b6118;">
+
+
+                                <!-- Soil Sampling Project -->
+                                <table class="project-table" width="100%" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span><a href="https://doi.org/10.1016/j.compag.2024.108650">Deep-Learning Framework for Optimal Selection of Soil Sampling Sites</a></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                This study addresses the challenge of selecting optimal soil sampling locations within agricultural fields by leveraging deep learning techniques. In this project, we utilize data from local farms, incorporating features such as aspect, flow accumulation, slope, NDVI, and yield for training. We propose two methods: one employing a convolutional neural network (CNN) and another based on a deep learning framework utilizing transformers and self-attention. Our framework achieves impressive results on the testing dataset, outperforming the CNN-based method significantly. This work not only introduces a novel approach to soil sampling but also lays the groundwork for applying data science and machine learning to other agricultural challenges.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/Soil_sampling_tool.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Pipeline of the soil sampling site selection tool using deep learning.</div>
+                                            </div>
+                                            <div>
+                                                <img src="images/self-attention.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Self-attention mechanism.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="width:810px; margin: 5px 0; border: 1px solid #6b6118;">
+
+                                <!-- Robotic Joint Failures Project -->
+                                <table class="project-table" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span><a href="https://hanhpt23.github.io/franka-IK/">Adaptive Compensation for Robotic Joint Failures Using Partially Observable Reinforcement Learning</a></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                In this study, we address the challenge of enabling a robotic manipulator to complete tasks despite joint malfunctions. 
+                                                Specifically, we develop a reinforcement learning (RL) framework to adaptively compensate for a non-functional joint during task execution. 
+                                                Our experimental platform is the Franka robot with 7 degrees of freedom (DOFs). 
+                                                We formulate the problem as a partially observable RL scenario, where the robot is trained under various joint failure conditions and tested in both seen and unseen scenarios. 
+                                                We consider scenarios where a joint is permanently broken and where it functions intermittently. 
+                                                Additionally, we demonstrate the effectiveness of our approach by comparing it with traditional inverse kinematics-based control methods. 
+                                                The results show that the RL algorithm enables the robot to successfully complete tasks even with joint failures, achieving a high success rate with an average rate of 93.6%. 
+                                                This showcases its robustness and adaptability. Our findings highlight the potential of RL to enhance the resilience and reliability of robotic systems, making them better suited for unpredictable environments. 
+                                                All related codes and models are published online.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="https://raw.githubusercontent.com/Hanhpt23/franka-IK/main/success.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Robot successfully opens a cabinet.</div>
+                                            </div>
+                                            <div>
+                                                <img src="https://raw.githubusercontent.com/Hanhpt23/franka-IK/main/woking.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Robot operating normally.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="width:810px; margin: 5px 0; border: 1px solid #6b6118;">
+
+                                <!-- seUNet-Trans Project -->
+                                <table class="project-table" width="95%" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span>
+                                            <a href="https://arxiv.org/pdf/2310.09998">
+                                                seUNet-Trans: A Simple Yet Effective UNet-Transformer Model for Medical Image Segmentation</th>
+                                            </a>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                In this project, we address the increasing importance of automated medical image segmentation in clinical practice, driven by the need for precise diagnosis and personalized treatment plans, alongside advancements in machine learning, notably deep learning. 
+                                                While CNNs have been dominant, Transformer-based models are gaining recognition for computer vision tasks. 
+                                                In this study, we propose a hybrid model, seUNet-Trans, combining UNet and Transformer architectures for medical image segmentation. 
+                                                In their approach, UNet serves as a feature extractor, followed by a bridge layer connecting UNet and Transformer sequentially. 
+                                                They employ pixel-level embedding without position embedding vectors to enhance efficiency and integrate spatial-reduction attention in the Transformer to reduce computational complexity. 
+                                                Extensive experimentation on seven medical image segmentation datasets, including polyp segmentation, demonstrates the superiority of our proposed seUNet-Trans network over several state-of-the-art models.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/UnetTransformer.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Architecture of seUNet-Trans.</div>
+                                            </div>
+                                            <div>
+                                                <img src="images/GLAS.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Results on the <a href="https://paperswithcode.com/dataset/glas">Glas dataset</a>.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="width:810px; margin: 5px 0; border: 1px solid #6b6118;">
+
+                                <!-- Droplet Analysis Project -->
+                                <table class="project-table" width="95%" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span><a href="https://arxiv.org/html/2402.15909v1">
+                                            Enhanced Droplet Analysis Using Generative Adversarial Networks</th>
+                                        </a>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                In this project, we explore the significance of precision devices in agriculture and the role of deep learning in enhancing their performance, specifically focusing on spray systems. 
+                                                Due to the limitations of collecting sufficient training data, the study proposes using generative adversarial networks (GANs) to create artificial images of droplets. 
+                                                By training the GAN model with a small dataset from high-speed cameras, it generates high-resolution images effectively. 
+                                                Leveraging these synthetic images, we proposed a droplet detection model that outperforms traditional methods, achieving a notable increase in mean average precision (mAP). 
+                                                This approach represents a pioneering use of generative models for augmenting droplet detection and contributes to addressing data scarcity challenges in precision agriculture, ultimately promoting efficient and sustainable agricultural practices.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/experiment_setup.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Experimental setup for droplet generation.</div>
+                                            </div>
+                                            <div>
+                                                <img src="images/compare_prediction.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Droplet detection results.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="width:810px; margin: 5px 0; border: 1px solid #6b6118;">
+
+                                <!-- 3D Brain Tumor Segmentation Project -->
+                                <table class="project-table" width="95%" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span>CNN-Transformer Model for 3D Brain Tumor Segmentation</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                In this paper, we introduce a novel methodology that combines convolutional neural networks (CNNs) and transformers to improve the accuracy of segmenting brain tumors in three-dimensional (3D) volumes. 
+                                                Our hybrid architecture utilizes CNNs for initial volume predictions and then transforms them into sequence-to-sequence segmentation predictions using transformers, aiming to enhance both accuracy and robustness while capturing global contextual information. 
+                                                The model is validated on a dataset from Harvard Medical School and Brats datasets, demonstrating effective segmentation of 3D brain tumors. 
+                                                We propose a promising avenue for advancing 3D brain tumor segmentation, contributing to the field of medical image analysis research. 
+                                                The source code is available on GitHub for further exploration.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/3D-brain-tumor.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Visualization of a brain volume with Flair and tumor using FreeView.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <hr style="width:810px; margin: 5px 0; border: 1px solid #6b6118;">
+
+                                <!-- Robotic Flying Fish Project -->
+                                <table class="project-table" width="95%" style="text-align: left;" cellspacing="0" cellpadding="20">
+                                    <tr>
+                                        <th colspan="2"><span>⚡</span><a href="https://doi.org/10.1016/j.oceaneng.2022.113512">
+                                            Robotic Flying Fish: Design, Fabrication, and Dynamics</th>
+                                        </a>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <!-- <strong>Description</strong> -->
+                                            <p>
+                                                In this work, we developed a robotic flying fish, KUFish, capable of fast swimming and leaping out of water, mimicking natural flying fish. 
+                                                The robot's thrust is naturally generated by a tail-beating mechanism driven by a DC motor and various linkages, achieving dynamic stability through symmetric mass distribution, positive buoyancy, and a lower center of gravity. 
+                                                Experimental results showed KUFish swimming 0.68 m at 1.35 m/s and leaping out of water in 0.68 s. 
+                                                In addition, we also developed a dynamic model to predict its swimming behavior, with findings indicating potential for future flying-fish-like robots.
+                                            </p>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <!-- <strong>Illustration</strong> -->
+                                            <div style="margin-bottom: 20px;">
+                                                <img src="images/roboticflyingfish.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Snapshots of KUFish leaping from water.</div>
+                                            </div>
+                                            <div>
+                                                <img src="images/roboticdynamic.png" class="project-image">
+                                                <div style="font-size: 16px; margin-top: 5px;">Dynamics of the robotic flying fish.</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!-- <p class="footer">Last updated: June 20, 2025</p> -->
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        const sunButton = document.getElementById('sun-theme');
+        const moonButton = document.getElementById('moon-theme');
+        const body = document.body;
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-theme');
+            sunButton.style.display = 'inline';
+            moonButton.style.display = 'none';
+        } else {
+            body.classList.remove('dark-theme');
+            sunButton.style.display = 'none';
+            moonButton.style.display = 'inline';
+        }
+
+        sunButton.addEventListener('click', () => {
+            body.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+            sunButton.style.display = 'none';
+            moonButton.style.display = 'inline';
+        });
+
+        moonButton.addEventListener('click', () => {
+            body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+            sunButton.style.display = 'inline';
+            moonButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>	
+							     
+				     
+							     
